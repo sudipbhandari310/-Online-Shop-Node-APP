@@ -27,13 +27,14 @@
                                     </p>
                                 </div>
                                 <div class="card__actions">
-                                    <form action="/add-to-cart" method="POST">
-                                        <a href="/admin/edit-product" class="btn">Edit</button>
-                                        <form action="/admin/delete-product"  method="POST">
+                                    <!-- <a href="/admin/edit-products/<%= product.id %>? edit= true" class="btn">Edit</a> -->
+                                    <a href="/admin/edit-products/<%= product.id %>?edit=true" class="btn">Edit</a>
 
-                                          <button class="btn">Delete</button>
-                                        </form>
+                                    <form action="/admin/delete-product" method="POST">
+                                        <input type="hidden" value="<%=product.id %>" name="productId">
+                                        <button class="btn" type="submit">Delete</button>
                                     </form>
+
                                 </div>
                             </article>
                             <% } %>
